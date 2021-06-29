@@ -1,0 +1,52 @@
+{
+  "name": "@cenk1cenk2-presentations/react-reveal",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Presentation template using react and reveal.js.",
+  "repository": "https://github.com/cenk1cenk2/react-presentations",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Cenk Kilic",
+    "email": "cenk@kilic.dev",
+    "url": "https://srcs.kilic.dev"
+  },
+  "scripts": {
+    "dev:start": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "./*.{ts,js,tsx,jsx}": [
+      "prettier --loglevel warn --write",
+      "eslint --fix"
+    ],
+    "./*.{json,md}": [
+      "prettier --loglevel warn --write"
+    ]
+  },
+  "dependencies": {
+    "@gregcello/revealjs-react": "^0.5.1",
+    "prismjs": "^1.24.0",
+    "reveal.js": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

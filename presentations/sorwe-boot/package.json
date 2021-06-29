@@ -1,0 +1,40 @@
+{
+  "name": "@cenk1cenk2-presentations/sorwe-boot",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Presentation template using react and reveal.js.",
+  "main": "src/index.ts",
+  "repository": "https://github.com/cenk1cenk2/react-presentations",
+  "scripts": {
+    "dev:start": "CRACO_PORT=3000 craco start --config ../../craco.config.js",
+    "build": "craco build --config ../../craco.config.js",
+    "lint:staged": "lint-staged"
+  },
+  "author": {
+    "name": "Cenk Kilic",
+    "email": "cenk@kilic.dev",
+    "url": "https://srcs.kilic.dev"
+  },
+  "lint-staged": {
+    "./*.{ts,js,tsx,jsx}": [
+      "prettier --loglevel warn --write",
+      "eslint --fix"
+    ],
+    "./*.{json,md}": [
+      "prettier --loglevel warn --write"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@cenk1cenk2-presentations/tailwind-configuration",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Presentation template using react and reveal.js.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/cenk1cenk2/react-presentations",
+  "author": {
+    "name": "Cenk Kilic",
+    "email": "cenk@kilic.dev",
+    "url": "https://srcs.kilic.dev"
+  },
+  "scripts": {
+    "prebuild": "rimraf tsconfig*.tsbuildinfo && rimraf dist/",
+    "build": "tsc -P tsconfig.build.json",
+    "dev:build": "yarn prebuild && tsc -p tsconfig.json",
+    "dev:start": "yarn dev:build && tsc-watch --noClear",
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "./*.{ts,js,tsx,jsx}": [
+      "prettier --loglevel warn --write",
+      "eslint --fix"
+    ],
+    "./*.{json,md}": [
+      "prettier --loglevel warn --write"
+    ]
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
+    "defu": "^5.0.0",
+    "tailwind-css-variables": "^3.0.1",
+    "tailwindcss": "^2.2.4",
+    "tailwindcss-dark-mode": "^1.1.7",
+    "theme-colors": "^0.0.5"
+  },
+  "devDependencies": {
+    "@types/tailwindcss": "^2.2.0",
+    "theme-colors": "^0.0.5"
+  }
+}
