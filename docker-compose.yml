@@ -7,7 +7,7 @@ services:
       SERVICE_0_CWD: packages/tailwind-configuration
       SERVICE_0_NAME: tailwind-configuration
       SERVICE_0_SYNC: 'true'
-      SERVICE_1_CWD: packages/reveal
+      SERVICE_1_CWD: packages/react-reveal
       SERVICE_1_NAME: react-reveal
       SERVICE_1_SYNC: 'true'
       SERVICE_2_CWD: presentations/sorwe-boot

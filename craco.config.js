@@ -1,4 +1,3 @@
-const CracoEsbuildPlugin = require('craco-esbuild')
 const path = require('path')
 
 module.exports = {
@@ -22,8 +21,10 @@ module.exports = {
       return webpackConfig
     }
   },
+  babel: {
+    plugins: [ 'babel-plugin-twin', 'babel-plugin-macros' ]
+  },
   devServer: {
     port: process.env.CRACO_PORT
-  },
-  plugins: [ { plugin: CracoEsbuildPlugin } ]
+  }
 }

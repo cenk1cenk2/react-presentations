@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@cenk1cenk2/eslint-config'],
+  extends: ['@cenk1cenk2/eslint-config', '@cenk1cenk2/eslint-config/typescript', '@cenk1cenk2/eslint-config/react-typescript'],
   rules: {
     'import/order': [
       'error',

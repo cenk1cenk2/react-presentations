@@ -1,6 +1,5 @@
 import { Presentation } from '@cenk1cenk2-presentations/react-reveal'
-import '@cenk1cenk2-presentations/react-reveal/assets/styles/tailwind.css'
-import { Slide, Note } from '@gregcello/revealjs-react'
+import { Code, H2, Slide } from '@gregcello/revealjs-react'
 import React, { Fragment } from 'react'
 
 const App: React.FC = () => {
@@ -8,15 +7,16 @@ const App: React.FC = () => {
     <Fragment>
       <Presentation>
         <Slide>
-          test
-          <Note> test notes</Note>
+          <H2 className="bg-gray-800">test</H2>
+          <Code language="typescript">
+            {{
+              code: 'const f: number = 2'
+            }}
+          </Code>
         </Slide>
-        <Slide>test</Slide>
-        <Slide>test</Slide>
-        <Slide>test</Slide>
-        <Slide>test</Slide>
-        <Slide>test</Slide>
-        <Slide>test</Slide>
+        <Slide>
+          <H2>test2</H2>
+        </Slide>
       </Presentation>
     </Fragment>
   )

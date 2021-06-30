@@ -1,0 +1,28 @@
+{
+  "name": "@cenk1cenk2-presentations/types",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Presentation template using react and reveal.js.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/cenk1cenk2/react-presentations",
+  "author": {
+    "name": "Cenk Kilic",
+    "email": "cenk@kilic.dev",
+    "url": "https://srcs.kilic.dev"
+  },
+  "scripts": {
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "./*.{ts,js,tsx,jsx}": [
+      "prettier --loglevel warn --write",
+      "eslint --fix"
+    ],
+    "./*.{json,md}": [
+      "prettier --loglevel warn --write"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
