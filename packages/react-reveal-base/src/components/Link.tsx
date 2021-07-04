@@ -48,7 +48,7 @@ function getLink (reveal: Reveal<MightBeRevealPlugin[]> | null, href?: string, s
   return '#'
 }
 
-function Link ({ autoAnimateId, children, fragmentIndex, href, slide, ...props }: MakeProps<LinkProps, 'a'>) {
+const Link: React.FC<MakeProps<LinkProps, 'a'>> = ({ autoAnimateId, children, fragmentIndex, href, slide, ...props }) => {
   const { reveal } = useReveal()
   const onClickOrHref = getLink(reveal, href, slide)
   const onClick = typeof onClickOrHref === 'function' ? onClickOrHref : undefined

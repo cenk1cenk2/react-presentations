@@ -31,7 +31,7 @@ export interface AudioProps {
   src: string
 }
 
-function Audio ({ autoplay, className, controls, fragment, fragmentIndex, fragmentStyle, lazy, loop, muted, preload, src, ...props }: MakeProps<AudioProps, 'audio'>) {
+const Audio: React.FC<MakeProps<AudioProps, 'audio'>> = ({ autoplay, className, controls, fragment, fragmentIndex, fragmentStyle, lazy, loop, muted, preload, src, ...props }) => {
   if (Array.isArray(src)) {
     return (
       <audio {...getClassNameProps(props)} data-autoplay={autoplay} controls={controls} muted={muted} loop={loop} data-fragment-index={fragmentIndex}>

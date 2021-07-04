@@ -10,7 +10,7 @@ export interface IFrameProps {
   width?: number
 }
 
-function IFrame ({ autoAnimateId, fragmentIndex, height, lazy, preload, src, width, ...props }: MakeProps<IFrameProps, 'iframe'>) {
+const IFrame: React.FC<MakeProps<IFrameProps, 'iframe'>> = ({ autoAnimateId, fragmentIndex, height, lazy, preload, src, width, ...props }) => {
   return (
     <iframe
       {...getClassNameProps(props)}

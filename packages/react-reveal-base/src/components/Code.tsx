@@ -21,7 +21,7 @@ function getPrismClassName (prism: boolean | undefined, autoAnimateId: string | 
   return `${`language-${language || 'none'}`}${lineNumberClassName ? ' line-numbers' : ''}` || undefined
 }
 
-function Code ({ id, children, language, escape, fragmentIndex, lineNumbers, startLineNumbersAt, noTrim, autoAnimateId, ...props }: MakeProps<CodeProps, 'pre'>) {
+const Code: React.FC<MakeProps<CodeProps, 'pre'>> = ({ id, children, language, escape, fragmentIndex, lineNumbers, startLineNumbersAt, noTrim, autoAnimateId, ...props }) => {
   const { prism } = useContext(RevealContext)
   const prismClassName = getPrismClassName(prism, autoAnimateId, lineNumbers, language)
   const fancyProps = getClassNameProps(props)

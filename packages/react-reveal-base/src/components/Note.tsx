@@ -4,7 +4,7 @@ import { MakeFullProps } from './BaseComponent'
 
 export type NoteProps = MakeFullProps<'aside'>
 
-function Note (props: NoteProps) {
+const Note: React.FC<NoteProps> = (props) => {
   return <aside {...props} className="notes" />
 }
 

@@ -10,7 +10,7 @@ export interface ImageProps {
   autoAnimateId?: string
 }
 
-function Image ({ autoAnimateId, alt, fragmentIndex, height, src, width, ...props }: MakeProps<ImageProps, 'img'>) {
+const Image: React.FC<MakeProps<ImageProps, 'img'>> = ({ autoAnimateId, alt, fragmentIndex, height, src, width, ...props }) => {
   return <img {...getClassNameProps(props)} data-id={autoAnimateId} src={src} alt={alt} width={width} height={height} data-fragment-index={fragmentIndex} />
 }
 

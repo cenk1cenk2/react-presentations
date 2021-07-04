@@ -22,7 +22,7 @@ export interface FragmentProps {
   tag?: SimpleComponent
 }
 
-export default function Fragment ({ index, transition, children, tag = 'span' }: FragmentProps) {
+const Fragment: React.FC<FragmentProps> = ({ index, transition, children, tag = 'span' }) => {
   const classes = [ 'fragment' ]
   if (transition) {
     classes.push(transition)
@@ -34,3 +34,5 @@ export default function Fragment ({ index, transition, children, tag = 'span' }:
     </Tag>
   )
 }
+
+export default Fragment

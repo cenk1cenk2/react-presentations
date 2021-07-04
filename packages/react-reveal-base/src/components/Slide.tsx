@@ -25,7 +25,7 @@ export interface SlideProps {
   visibility?: 'uncounted' | 'hidden'
 }
 
-function Slide ({ autoslide,
+const Slide: React.FC<SlideProps> = ({ autoslide,
   autoAnimate,
   autoAnimateUnmatched,
   backgroundColor,
@@ -44,7 +44,7 @@ function Slide ({ autoslide,
   transition,
   transitionSpeed,
   visibility,
-  timing }: SlideProps) {
+  timing }) => {
   return (
     <section
       data-autoslide={autoslide}

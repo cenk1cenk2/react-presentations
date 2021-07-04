@@ -32,7 +32,7 @@ const formatMap: {
   webm: 'video/webm'
 }
 
-function Video ({ autoAnimateId, autoplay, controls, fragmentIndex, height, lazy, loop, muted, preload, width, src, ...props }: MakeProps<VideoProps, 'video'>) {
+const Video: React.FC<MakeProps<VideoProps, 'video'>> = ({ autoAnimateId, autoplay, controls, fragmentIndex, height, lazy, loop, muted, preload, width, src, ...props }) => {
   if (Array.isArray(src)) {
     return (
       <video
