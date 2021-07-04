@@ -1,4 +1,6 @@
 const path = require('path')
+const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default
+const defu = require('defu')
 
 module.exports = {
   style: {
@@ -12,7 +14,12 @@ module.exports = {
   webpack: {
     alias: {},
     plugins: {
-      add: [],
+      add: [
+        new WatchExternalFilesPlugin({
+          files: [ path.join(process.cwd(), '../../packages/tailwind-configuration/dist/**'), path.join(process.cwd(), '../../craco.config.js') ],
+          verbose: true
+        })
+      ],
       remove: []
     },
     configure: (webpackConfig, { paths }) => {

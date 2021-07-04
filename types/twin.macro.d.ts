@@ -1,4 +1,3 @@
-import 'twin.macro'
 import { SVGAttributes, ClassAttributes, Attributes, DOMAttributes } from 'react'
 import styledImport, { CSSProp, css as cssImport } from 'styled-components'
 

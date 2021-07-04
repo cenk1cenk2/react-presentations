@@ -1,9 +1,12 @@
-import { join } from 'path'
-import defaultTheme from 'tailwindcss/defaultTheme'
-import { getColors } from 'theme-colors'
 import defu from 'defu'
+import { DeepPartial } from 'helper-types'
+import { CSSProperties } from 'styled-components'
+import defaultTheme from 'tailwindcss/defaultTheme'
+import plugin from 'tailwindcss/plugin'
+import { TailwindConfig } from 'tailwindcss/tailwind-config'
+import { getColors } from 'theme-colors'
 
-export function generateTailwindConfiguration(config?: Record<PropertyKey, any>): Record<PropertyKey, any> {
+export function generateTailwindConfiguration(config?: DeepPartial<TailwindConfig>): DeepPartial<TailwindConfig> {
   return defu.arrayFn(
     {
       jit: true,
@@ -14,45 +17,45 @@ export function generateTailwindConfiguration(config?: Record<PropertyKey, any>)
         defaultLineHeights: true,
         standardFontWeights: true
       },
+
       theme: {
         extend: {
           fontFamily: {
             sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
-            mono: ['DM Mono', ...defaultTheme.fontFamily.mono]
+            mono: ['Consolas', ...defaultTheme.fontFamily.mono]
           },
           colors: {
             primary: getColors('#cd0043'),
             gray: getColors('#434951'),
             orange: getColors('#fa8350')
           },
-          maxHeight: {
-            '(screen-16)': 'calc(100vh - 4rem)'
-          },
           inset: {
             16: '4rem'
           },
-          transitionProperty: {
-            padding: 'padding'
-          },
-          typography: (theme) => ({
+          typography: (theme: (s: string) => any): Record<string, Record<string, Record<string, CSSProperties>>> => ({
             DEFAULT: {
               css: {
                 a: {
                   color: theme('colors.primary.500'),
-                  'text-decoration': 'none'
+                  textDecoration: 'none'
+                },
+                h1: {
+                  paddingTop: theme('padding.1'),
+                  paddingBottom: theme('padding.1'),
+                  borderWidth: 0
                 },
                 h2: {
-                  paddingBottom: theme('padding.2'),
-                  borderBottomWidth: '1px',
-                  borderBottomColor: theme('colors.gray.200')
+                  paddingTop: theme('padding.1'),
+                  paddingBottom: theme('padding.1'),
+                  borderWidth: 0
                 },
                 h3: {
-                  paddingBottom: theme('padding.2'),
-                  borderBottomWidth: '1px',
-                  borderBottomColor: theme('colors.gray.200')
+                  paddingTop: theme('padding.1/2'),
+                  paddingBottom: theme('padding.1/2'),
+                  borderWidth: 0
                 },
                 blockquote: {
-                  fontWeight: '400',
+                  fontWeight: 400,
                   color: theme('colors.gray.600'),
                   fontStyle: 'normal',
                   quotes: '"\\201C""\\201D""\\2018""\\2019"'
@@ -64,12 +67,15 @@ export function generateTailwindConfiguration(config?: Record<PropertyKey, any>)
                   content: ''
                 },
                 code: {
-                  fontWeight: '400',
+                  fontWeight: 400,
                   backgroundColor: theme('colors.gray.100'),
                   padding: theme('padding.1'),
-                  borderWidth: 1,
+                  borderWidth: 0,
                   borderColor: theme('colors.gray.200'),
-                  borderRadius: theme('borderRadius.default')
+                  borderRadius: 0
+                },
+                pre: {
+                  borderRadius: 0
                 },
                 'code::before': {
                   content: ''
@@ -78,18 +84,15 @@ export function generateTailwindConfiguration(config?: Record<PropertyKey, any>)
                   content: ''
                 },
                 'h3 code': {
-                  fontWeight: '600'
-                },
-                'pre code': {
-                  fontFamily: 'DM Mono'
+                  fontWeight: 600
                 },
                 'a code': {
                   color: theme('colors.primary.500')
                 },
                 img: {
                   display: 'inline-block',
-                  'margin-bottom': '0.25em',
-                  'margin-top': '0.25em'
+                  marginBottom: '0.25em',
+                  marginTop: '0.25em'
                 }
               }
             },
@@ -122,12 +125,10 @@ export function generateTailwindConfiguration(config?: Record<PropertyKey, any>)
                   color: theme('colors.gray.100')
                 },
                 h2: {
-                  color: theme('colors.gray.100'),
-                  borderBottomColor: theme('colors.gray.800')
+                  color: theme('colors.gray.100')
                 },
                 h3: {
-                  color: theme('colors.gray.100'),
-                  borderBottomColor: theme('colors.gray.800')
+                  color: theme('colors.gray.100')
                 },
                 h4: {
                   color: theme('colors.gray.100')
@@ -140,8 +141,7 @@ export function generateTailwindConfiguration(config?: Record<PropertyKey, any>)
                 },
                 code: {
                   color: theme('colors.gray.100'),
-                  backgroundColor: theme('colors.gray.800'),
-                  borderWidth: 0
+                  backgroundColor: theme('colors.gray.800')
                 },
                 'a code': {
                   color: theme('colors.primary.500')
@@ -186,23 +186,40 @@ export function generateTailwindConfiguration(config?: Record<PropertyKey, any>)
           zIndex: false,
           opacity: false
         }),
-        require('@tailwindcss/forms')
+        require('@tailwindcss/forms'),
+        plugin(({ addBase, theme }) => {
+          const revealClassSelector = '.reveal'
+
+          const cssMaps = [
+            mapMultipleComponentsWithCss(['::selection', '::-moz-selection'], {
+              background: theme('colors.gray.500')
+            }),
+            mapMultipleComponentsWithCss(['img', 'video', 'iframe'], { maxWidth: '95%', maxHeight: '95%' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['em'], { fontStyle: 'italic' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['ol', 'dl', 'ul'], { display: 'inline-block', textAlign: 'left', margin: '0 0 0 1em' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['ol'], { listStyleType: 'decimal' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['ul'], { listStyleType: 'disc' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['ul ul'], { listStyleType: 'square' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['ul ul ul'], { listStyleType: 'circle' }, revealClassSelector),
+            mapMultipleComponentsWithCss(['ul ul', 'ul ol', 'ol ol', 'ol ul'], { display: 'block', marginLeft: theme('margin.4') }, revealClassSelector),
+            mapMultipleComponentsWithCss(['dt'], { fontWeight: 700 }, revealClassSelector),
+            mapMultipleComponentsWithCss(['dd'], { marginLeft: theme('margin.4') }, revealClassSelector),
+            mapMultipleComponentsWithCss(['.controls'], { color: theme('colors.primary.600') }, revealClassSelector),
+            mapMultipleComponentsWithCss(['.progress'], { background: theme('colors.gray.700'), color: theme('colors.primary.500') }, revealClassSelector)
+          ]
+
+          addBase(cssMaps.reduce((o, c) => ({ ...o, ...c }), {}))
+        })
       ],
       purge: {
         enabled: process.env.NODE_ENV === 'production',
-        content: [
-          'content/**/*.md',
-          join(__dirname, 'components/**/*.vue'),
-          join(__dirname, 'layouts/**/*.vue'),
-          join(__dirname, 'pages/**/*.vue'),
-          join(__dirname, 'plugins/**/*.js'),
-          'nuxt.config.js'
-        ],
-        options: {
-          whitelist: ['dark']
-        }
+        content: []
       }
     },
     config
   )
+}
+
+function mapMultipleComponentsWithCss(components: string[], css: CSSProperties, prefix?: string): Record<PropertyKey, CSSProperties> {
+  return components.reduce((o, c) => ({ ...o, [prefix ? `${prefix} ${c}` : c]: css }), {})
 }

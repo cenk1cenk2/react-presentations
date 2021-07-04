@@ -1,5 +1,5 @@
 import { Presentation } from '@cenk1cenk2-presentations/react-reveal'
-import { Code, H2, Slide } from '@gregcello/revealjs-react'
+import { Code, H2, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 import React, { Fragment } from 'react'
 
 const App: React.FC = () => {

@@ -9,6 +9,8 @@
   "scripts": {
     "dev:start": "CRACO_PORT=3000 craco start --config ../../craco.config.js",
     "build": "craco build --config ../../craco.config.js",
+    "lint": "prettier --write src/ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx --fix src/",
+    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx src/",
     "lint:staged": "lint-staged"
   },
   "author": {
