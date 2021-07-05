@@ -42,7 +42,7 @@ steps:
       tag:
         - latest
       build_args:
-        PROJECT_FOLDER: sorwe-boot
+        - PROJECT_FOLDER=sorwe-boot
     when:
       event:
         - push
