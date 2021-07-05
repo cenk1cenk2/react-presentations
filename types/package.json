@@ -12,8 +12,8 @@
     "url": "https://srcs.kilic.dev"
   },
   "scripts": {
-    "lint": "prettier --write src/ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx --fix src/",
-    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx src/",
+    "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx --fix ./",
+    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx ./",
     "lint:staged": "lint-staged"
   },
   "lint-staged": {

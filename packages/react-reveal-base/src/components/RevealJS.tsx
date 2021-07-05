@@ -23,6 +23,7 @@ const defaultAutoAnimateStyles = [
   'outline',
   'outline-offset'
 ]
+
 export interface RevealJSProps<Plugins extends MightBeRevealPlugin[]> {
   children: React.ReactNode
   plugins?: Plugins

@@ -1,0 +1,53 @@
+kind: pipeline
+name: default
+type: docker
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
+
+steps:
+  - name: install
+    image: node:current-alpine
+    commands:
+      - yarn --frozen-lockfile
+
+  - name: lint
+    image: node:current-alpine
+    depends_on:
+      - install
+    commands:
+      - yarn command lint:check --concurrency 1
+
+  - name: build
+    image: node:current-alpine
+    depends_on:
+      - install
+    commands:
+      - yarn command build --include-dependencies
+
+  - name: publish
+    image: plugins/docker
+    depends_on:
+      - build
+    settings:
+      registry: docker.kilic.dev
+      repo: docker.kilic.dev/html-presentations-sorwe-boot
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      tag:
+        - latest
+      build_args:
+        PROJECT_FOLDER: sorwe-boot
+    when:
+      event:
+        - push
+      branch:
+        - master
+
+image_pull_secrets:
+  - dockerconfigjson

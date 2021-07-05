@@ -64,6 +64,7 @@
     "simple-git-hooks": "^2.4.1",
     "styled-components": "^5.3.0",
     "tsc-watch": "^4.4.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.3.5",
     "webpack": "4.44.2",
     "webpack-watch-files-plugin": "^1.1.0"

@@ -1,6 +1,15 @@
 import 'reveal.js/dist/reveal.css'
-import overlay from '@cenk1cenk2-presentations/react-reveal/assets/images/overlay.png'
-import { MarkdownPlugin, MathPlugin, NotesPlugin, PrismHighlightPlugin, RevealJS, RevealJSProps, RevealPlugin, SearchPlugin, ZoomPlugin } from '@cenk1cenk2-presentations/react-reveal-base'
+import {
+  MarkdownPlugin,
+  MathPlugin,
+  NotesPlugin,
+  PrismHighlightPlugin,
+  RevealJS,
+  RevealJSProps,
+  RevealPlugin,
+  SearchPlugin,
+  ZoomPlugin
+} from '@cenk1cenk2-presentations/react-reveal-base'
 import consola from 'consola'
 import 'prismjs/plugins/line-highlight/prism-line-highlight'
 import 'prismjs/plugins/line-highlight/prism-line-highlight.css'
@@ -11,14 +20,13 @@ import { createGlobalStyle, css } from 'styled-components'
 import tw, { theme } from 'twin.macro'
 import '@cenk1cenk2-presentations/react-reveal/assets/styles/tailwind.css'
 
-import { Wrapper } from './wrapper'
+import { Wrapper, WrapperProps } from './wrapper'
 
-interface Props {
+export interface PresentationsProps extends WrapperProps {
   reveal?: RevealJSProps<any[]>
-  overlay?: boolean
 }
 
-export const Presentation: React.FC<Props> = (props) => {
+export const Presentation: React.FC<PresentationsProps> = (props) => {
   const plugins = [ PrismHighlightPlugin, MarkdownPlugin, MathPlugin, NotesPlugin, SearchPlugin, ZoomPlugin ]
 
   const themes = theme()
@@ -28,7 +36,6 @@ export const Presentation: React.FC<Props> = (props) => {
   return (
     <Fragment>
       <GlobalStyle />
-      {props.overlay && <OverlayStyle />}
       <RevealJS
         plugins={plugins}
         controls={true}
@@ -47,7 +54,7 @@ export const Presentation: React.FC<Props> = (props) => {
         {...props.reveal}
       >
         {props.children}
-        <Wrapper />
+        <Wrapper overlay={props.overlay} />
       </RevealJS>
     </Fragment>
   )
@@ -63,22 +70,8 @@ const GlobalStyle = createGlobalStyle(
 
         ${tw`prose prose-dark max-w-none`}
 
-        font-size: 48px;
+        font-size: 42px;
       }
-    }
-  `
-)
-
-const OverlayStyle = createGlobalStyle(
-  () => css`
-    .reveal.slide {
-      background: url(${overlay}) no-repeat center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${overlay}', sizingMethod='scale');
-      -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${overlay}', sizingMethod='scale');
     }
   `
 )

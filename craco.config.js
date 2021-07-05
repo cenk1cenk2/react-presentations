@@ -1,6 +1,6 @@
 const path = require('path')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default
-const defu = require('defu')
 
 module.exports = {
   style: {
@@ -25,6 +25,8 @@ module.exports = {
     configure: (webpackConfig, { paths }) => {
       webpackConfig.output.path = paths.appBuild = path.resolve('dist')
 
+      webpackConfig.resolve.plugins.push(new TsconfigPathsPlugin({}))
+
       return webpackConfig
     }
   },
@@ -32,6 +34,6 @@ module.exports = {
     plugins: [ 'babel-plugin-twin', 'babel-plugin-macros' ]
   },
   devServer: {
-    port: process.env.CRACO_PORT
+    port: process.env.CRACO_PORT ? process.env.CRACO_PORT : 3000
   }
 }

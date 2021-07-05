@@ -32,6 +32,8 @@ import type { ImageProps } from './components/Image'
 import Image from './components/Image'
 import type { LinkProps } from './components/Link'
 import Link from './components/Link'
+import type { MarkdownSlideProps } from './components/MarkdownSlide'
+import MarkdownSlide from './components/MarkdownSlide'
 import type { NoteProps } from './components/Note'
 import Note from './components/Note'
 import type { RevealJSProps } from './components/RevealJS'
@@ -117,6 +119,7 @@ export {
   HighlightPlugin,
   MathPlugin,
   MarkdownPlugin,
+  MarkdownSlide,
   SearchPlugin,
   ZoomPlugin,
   NotesPlugin
@@ -128,6 +131,7 @@ export type {
   CustomPrismHighlightPlugin,
   RevealPlugin,
   RevealPluginDefinition,
+  MarkdownSlideProps,
   RevealPlugins,
   RevealPluginList,
   Reveal,
