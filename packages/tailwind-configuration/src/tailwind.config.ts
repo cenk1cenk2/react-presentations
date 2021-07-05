@@ -209,7 +209,7 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
     ],
     purge: {
       enabled: process.env.NODE_ENV === 'production',
-      content: []
+      content: [ './src/**/*.{js,ts,jsx,tsx}', '**/node_modules/cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ]
     }
   })
 }
