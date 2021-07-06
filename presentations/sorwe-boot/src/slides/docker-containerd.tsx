@@ -12,7 +12,7 @@ const DockerContainerd: React.FC = () => {
           <FontAwesomeIcon icon={faDocker} />
         </H2>
         <div className="grid grid-cols-2">
-          <div className="grid-span-1 self-center">
+          <div className="grid-span-1 max-w-md place-self-center">
             <Ul>
               <Li fragment={true}>containerd</Li>
             </Ul>
@@ -28,15 +28,17 @@ const DockerContainerd: React.FC = () => {
 }
 
 const notes = `
-Kabaca bir dockerin mantigindan bahsetmek gerekirse bu sistem iki seyin ustune kuruludur.
-
 Bunlardan birincisi olan containerd sanal makineden farkli olarak altta yatan kerneli ortak bir sekilde kullanip ustunde kalan kismi izole ediyor.
+
+<-next->
 
 Boylece kerneli ortak kullandigimiz icin uzerinde bu kernele baz alan farkli isletim sistemlerini donanima arada hypervisor gibi bir cevirici olmadan direk ulastirarak elimizdeki kaynaklari daha iyi kullanan bir runtime elde ediyoruz.
 
-containerd hem windows, hem linux uzerinde yerel olarak calisabilmektedir.
+<-next->
 
-Burada containerd sadece bir runtimedir. Bundan once herkesin yakindan bildigi unix chroot ve kimsenin ilgisini cok cekmeyen LXC containerlari gibi ornekleri olsada bu runtimein avantaji birden fazla containeri tek bir isletim sistemi uzerinde kolayca kontrol edebilmesidir.
+containerd hem windows, hem linux uzerinde yerel kernelerini kullanarak calisabilmektedir.
+
+Burada containerd sadece bir runtimedir. Bundan once herkesin yakindan bildigi unix chroot ve kimsenin ilgisini cok cekmeyen LXC containerlari gibi oncul ornekleri olsada bu runtimein avantaji birden fazla containeri tek bir isletim sistemi uzerinde kolayca kontrol edebilmesidir.
 `
 
 export default DockerContainerd

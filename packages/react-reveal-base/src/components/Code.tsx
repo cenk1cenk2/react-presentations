@@ -28,24 +28,26 @@ const Code: React.FC<MakeProps<CodeProps, 'pre'>> = ({ id, children, language, e
   const calculatedClassName: string | undefined = (fancyProps as any).className
   const className = calculatedClassName && prismClassName ? `${calculatedClassName} ${prismClassName}` : prismClassName
   return (
-    <pre
-      {...fancyProps}
-      className={className}
-      data-id={autoAnimateId || id}
-      id={id}
-      data-fragment-index={fragmentIndex}
-      data-line={typeof lineNumbers === 'string' ? lineNumbers : undefined}
-      data-line-offset={startLineNumbersAt}
-    >
-      <code
-        className={prism ? (language ? `language-${language}` : 'language-none') : language}
-        data-noescape={!escape}
-        data-trim={!noTrim}
-        data-line-numbers={autoAnimateId ? lineNumbers || true : lineNumbers}
+    <div className="max-w-4xl mx-auto">
+      <pre
+        {...fancyProps}
+        className={className}
+        data-id={autoAnimateId || id}
+        id={id}
+        data-fragment-index={fragmentIndex}
+        data-line={typeof lineNumbers === 'string' ? lineNumbers : undefined}
+        data-line-offset={startLineNumbersAt}
       >
-        {children.code}
-      </code>
-    </pre>
+        <code
+          className={prism ? (language ? `language-${language}` : 'language-none') : language}
+          data-noescape={!escape}
+          data-trim={!noTrim}
+          data-line-numbers={autoAnimateId ? lineNumbers || true : lineNumbers}
+        >
+          {children.code}
+        </code>
+      </pre>
+    </div>
   )
 }
 

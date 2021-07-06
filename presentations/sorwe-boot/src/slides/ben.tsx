@@ -23,10 +23,11 @@ Oncelikle herseye baslamadan once bu adam nerden cikti dememeniz icin kisaca ben
 - ben cenk
 - kisa bir suredir viyanada ikamet ediyorum.
 - buraya geldigimde is kolumu degistirip daha sevdigim birsey uzerine yonelmek icin sadece programcilik uzerine is aramaya basladim. cok uzun zamandir, tam olarak kucuklukten beri denilecek sekilde irili ufakli zaten bu islerle ugrasiyordum.
-- genel olarak suan tam zamanli calistigim sirkette backend developer olarak gecsemde developer operations hatta ne denk gelirse yapiyorum. genelde alt yapi calismalari uzerine yogunlasmis durumdayim.
-- en can alici noktasi da suan calistigim yerde genel olarak kendim birseyler uzerinde calistigim icin, ne kadar part-time olarak calissamda bana her saate ulasmaniz mumkun olacaktir.
+- genel olarak suan tam zamanli calistigim sirkette backend developer olarak gecsemde developer operations hatta ne denk gelirse yapiyorum. ama genelde alt yapi calismalari uzerine yogunlasmis durumdayim.
+- en can alici noktasi da suan calistigim yerde genel olarak kendim birseyler uzerinde calistigim icin, ne kadar sizinle part-time olarak calissamda bana her saate ulasmaniz mumkun olacaktir.
 
-asagidaki linktende bir haftasonu gaza gelip yaptigim websitesi muhtemelen suan anlatmaya calistigimdan daha detayli bilgi verecektir.
+<-next->
+asagidaki linktende bir haftasonu gaza gelip yaptigim websitesi muhtemelen kendimi suan anlatmaya calistigimdan daha iyi bir sekilde anlatacaktir.
 `
 
 export default Ben

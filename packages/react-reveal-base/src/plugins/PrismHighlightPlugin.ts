@@ -7,6 +7,8 @@ import '@cenk1cenk2-presentations/react-reveal-base/assets/plugins/styles/PrismH
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-tsx'
 import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-docker'
+import 'prismjs/components/prism-yaml'
 
 window.Prism = Prism
 

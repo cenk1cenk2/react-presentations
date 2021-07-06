@@ -17,7 +17,7 @@ const Docker: React.FC = () => {
 }
 
 const notes = `
-Kabaca bir dockerin mantigindan bahsetmek gerekirse bu sistem iki seyin ustune kuruludur.
+Kabaca bir dockerin mantigindan bahsetmek gerekirse bu sistem iki seyin ustune kuruludur. Kabaca derken bu konuda ozellikle diger konuya gore biraz daha fazla detaya girecegim cunku acikasi alti bos sekilde birsey anlatmayi pek sevmiyorum. Fakat biz bunlari zaten biliyoruz dediginiz kisimlari her turlu gecmemiz mumkundur.
 `
 
 export default Docker

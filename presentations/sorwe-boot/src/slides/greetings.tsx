@@ -23,7 +23,9 @@ Herkese merhabalar ben Cenk,
 
 Bugun onumuzdeki ay icinde baslayacagimiz otomasyon sureciyle sirket ve sizler acisindan neler degisecek bizlere neler katicak, nelere dikkat etmemiz gerekli gibi konulari konusacagiz ve bu vasitayla ben de sizinle tanismis olacagim.
 
-Sizden ricam gerekli gordugunuz yerlerde beni durdurup aklinizdakileri sorabilirseniz, hem bu sunum en iyi sekilde gececektir hemde benim de sizi tanimam acisindan cok yararli olacaktir.
+Sizden ricam gerekli gordugunuz yerlerde beni durdurup aklinizdakileri sorabilirseniz, hem bu sunum en iyi sekilde gececektir hemde benim de sizleri tanimam acisindan cok yararli olacaktir.
+
+Sizinle tabi ki ilk defa tanistigim icin, hak verirsiniz ki hersey biraz sulandirilmis sekilde hazirladim. Size bir iki ufak sorum var bunun disinda bu sunum yaklasik olarak 16dk surecek ve adimlari asagidaki barin dolmasindan takip edebilirsiniz.
 `
 
 export default Greetings

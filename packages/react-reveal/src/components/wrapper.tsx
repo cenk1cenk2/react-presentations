@@ -14,6 +14,8 @@ export const Wrapper: React.FC<WrapperProps> = (props) => {
   const [ activeOverlay, setActiveOverlay ] = useState(false)
 
   useEffect(() => {
+    enablePrismLineNumbers()
+
     if (!reveal) {
       consola.warn('Reveal.js is not ready yet.')
 
@@ -21,7 +23,6 @@ export const Wrapper: React.FC<WrapperProps> = (props) => {
     }
 
     consola.info('Enabling prism line numbers.')
-    enablePrismLineNumbers()
 
     if (props.overlay === 'firstAndLast') {
       consola.info('Overlay active for first and last slide.')

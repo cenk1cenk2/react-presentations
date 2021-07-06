@@ -52,8 +52,8 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
                 borderWidth: 0
               },
               h3: {
-                paddingTop: theme('padding.1/2'),
-                paddingBottom: theme('padding.1/2'),
+                paddingTop: theme('padding.0.5'),
+                paddingBottom: theme('padding.0.5'),
                 marginBottom: 0,
                 marginTop: 0,
                 borderWidth: 0
@@ -76,7 +76,8 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
                 padding: theme('padding.1'),
                 borderWidth: 0,
                 borderColor: theme('colors.gray.200'),
-                borderRadius: 0
+                borderRadius: 0,
+                lineHeight: theme('lineHeight.3')
               },
               pre: {
                 borderRadius: 0
@@ -93,10 +94,28 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
               'a code': {
                 color: theme('colors.primary.500')
               },
+              'ul > li': {
+                paddingLeft: '1em',
+                textAlign: 'left'
+              },
+              'ol > li': {
+                paddingLeft: '1em',
+                textAlign: 'left'
+              },
+              'ol > li::before': {
+                top: 'calc(0.875em - 0.1em)'
+              },
+              'ul > li::before': {
+                top: 'calc(0.875em - 0.1em)'
+              },
               img: {
                 display: 'inline-block',
                 marginBottom: '0.25em',
-                marginTop: '0.25em'
+                marginTop: '0.25em',
+                borderColor: theme('colors.gray.300')
+              },
+              video: {
+                borderColor: theme('colors.gray.300')
               }
             }
           },
@@ -156,6 +175,12 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
               },
               'tbody tr': {
                 borderBottomColor: theme('colors.gray.700')
+              },
+              img: {
+                borderColor: theme('colors.gray.800')
+              },
+              video: {
+                borderColor: theme('colors.gray.800')
               }
             }
           }
@@ -201,7 +226,22 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
           mapMultipleComponentsWithCss([ 'img', 'video', 'iframe' ], { maxWidth: '95%', maxHeight: '95%' }, revealClassSelector),
           mapMultipleComponentsWithCss([ 'em' ], { fontStyle: 'italic' }, revealClassSelector),
           mapMultipleComponentsWithCss([ '.controls' ], { color: theme('colors.primary.600') }, revealClassSelector),
-          mapMultipleComponentsWithCss([ '.progress' ], { background: theme('colors.gray.700'), color: theme('colors.primary.500') }, revealClassSelector)
+          mapMultipleComponentsWithCss([ '.progress' ], { background: theme('colors.gray.700'), color: theme('colors.primary.500') }, revealClassSelector),
+          mapMultipleComponentsWithCss(
+            [ 'ul > li', 'ol > li' ],
+            {
+              paddingLeft: '1em',
+              textAlign: 'left'
+            },
+            revealClassSelector
+          ),
+          mapMultipleComponentsWithCss(
+            [ 'ul > li::before', 'ol > li::before' ],
+            {
+              top: 'calc(0.875em - 0.1em)'
+            },
+            revealClassSelector
+          )
         ]
 
         addBase(cssMaps.reduce((o, c) => ({ ...o, ...c }), {}))

@@ -12,7 +12,7 @@ const DockerNamespaces: React.FC = () => {
           <FontAwesomeIcon icon={faDocker} />
         </H2>
         <div className="grid grid-cols-2">
-          <div className="grid-span-1 self-center">
+          <div className="grid-span-1 max-w-md place-self-center">
             <Ul>
               <Li fragment={true}>namespaces</Li>
             </Ul>
@@ -28,13 +28,17 @@ const DockerNamespaces: React.FC = () => {
 }
 
 const notes = `
-Burada containerlarimiz arasindaki islemleri entegre eden sey ise namespacesdir.
+Burada containerlarimiz arasindaki islemleri isole eden sey ise namespacesdir.
+
+<-next->
 
 Ben linux uzerinden bildigim icin onun uzerinden bahsetmek istiyorum.
 
 Namespaces kernelin belirli parcalarini kullanicilar, mount noktalari, network, processler gibi birbirinden izole ederek sanal ve daha kucuk alanlar yaratir.
 
-Bu da elimizdeki containerd runtimein kontrolu sayesinde bize disariya izole ve sadece bizim istedigimiz kadar disariya erisimi olan paketleri bu sistemin oldugu heryere tasiyabilmemize ve tasidigimiz heryerde ayni sekilde calismasina yariyor.
+<-next->
+
+Bu da elimizdeki containerd runtimein ve control grouplarinin kontrolu sayesinde bize disariya izole ve sadece bizim istedigimiz kadar disariya erisimi olan paketleri bu sistemin oldugu heryere tasiyabilmemize ve tasidigimiz heryerde ayni sekilde calismasina yariyor.
 `
 
 export default DockerNamespaces

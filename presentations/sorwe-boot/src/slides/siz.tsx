@@ -25,7 +25,11 @@ const Siz: React.FC = () => {
 const notes = `
 sizin hakkinizda edinmek istedigim ufak bilgi niteliginde sorularim var, affiniza siginarak bunlari size soruyorum.
 
+<-next->
+
 ilki daha onceden docker ile calistiniz mi ve containerlama hakkinda ne kadar bilginiz var?
+
+<-next->
 
 ve ikincisi de ci/cd ile calisma firsatiniz olup olmadigi?
 
