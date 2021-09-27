@@ -28,26 +28,48 @@ steps:
     commands:
       - yarn command build --include-dependencies
 
-  - name: publish
-    image: plugins/docker
-    depends_on:
-      - build
+  - name: semantic-release
+    image: cenk1cenk2/drone-semantic-release
     settings:
-      registry: docker.kilic.dev
-      repo: docker.kilic.dev/html-presentations-sorwe-boot
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      tag:
-        - latest
-      build_args:
-        - PROJECT_FOLDER=sorwe-boot
+      git_method: gh
+      add_modules:
+        - '@qiwi/multi-semantic-release'
+      override: multi-semantic-release
+      git_user_email:
+        from_secret: github_username
+      github_token:
+        from_secret: github_token
+      npm_token:
+        from_secret: npm_token
     when:
-      event:
-        - push
       branch:
         - master
+        - alpha
+        - beta
+        - rc
+      event:
+        - push
+
+  # - name: publish
+  #   image: plugins/docker
+  #   depends_on:
+  #     - build
+  #   settings:
+  #     registry: docker.kilic.dev
+  #     repo: docker.kilic.dev/html-presentations-sorwe-boot
+  #     username:
+  #       from_secret: docker_username
+  #     password:
+  #       from_secret: docker_password
+  #     tag:
+  #       - latest
+  #     build_args:
+  #       - PROJECT_FOLDER=sorwe-boot
+  #   when:
+  #     event:
+  #       - push
+  #     branch:
+  #       - master
 
 image_pull_secrets:
   - dockerconfigjson
