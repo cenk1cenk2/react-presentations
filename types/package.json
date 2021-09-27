@@ -11,6 +11,9 @@
     "email": "cenk@kilic.dev",
     "url": "https://srcs.kilic.dev"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {},
   "lint-staged": {
     "./*.{ts,js,tsx,jsx}": [

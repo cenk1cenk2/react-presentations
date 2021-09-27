@@ -4,6 +4,9 @@
   "description": "A React wrapper for the RevealJS Presentation Library.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prebuild": "rimraf tsconfig*.tsbuildinfo && rimraf dist/",
     "build": "tsc -P tsconfig.build.json",
