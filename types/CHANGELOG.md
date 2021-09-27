@@ -1,3 +1,10 @@
+## @cenk1cenk2-presentations/types [1.0.2](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/types@1.0.1...@cenk1cenk2-presentations/types@1.0.2) (2021-09-27)
+
+
+### Bug Fixes
+
+* add publish config ([a729903](https://github.com/cenk1cenk2/react-presentations/commit/a729903870847e80a6646bcbb93698efb7510184))
+
 ## @cenk1cenk2-presentations/types [1.0.1](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/types@1.0.0...@cenk1cenk2-presentations/types@1.0.1) (2021-09-27)
 
 
