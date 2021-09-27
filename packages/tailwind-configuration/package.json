@@ -34,12 +34,10 @@
     "@tailwindcss/typography": "^0.4.1",
     "defu": "^5.0.0",
     "tailwind-css-variables": "^3.0.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.2.4",
     "tailwindcss-dark-mode": "^1.1.7",
     "theme-colors": "^0.0.5"
   },
   "devDependencies": {
-    "@types/tailwindcss": "^2.2.0",
-    "theme-colors": "^0.0.5"
+    "@types/tailwindcss": "^2.2.0"
   }
 }
