@@ -11,11 +11,7 @@
     "email": "cenk@kilic.dev",
     "url": "https://srcs.kilic.dev"
   },
-  "scripts": {
-    "lint": "prettier --write ./ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx --fix ./",
-    "lint:check": "eslint --ext .ts,.js,.tsx,.jsx ./",
-    "lint:staged": "lint-staged"
-  },
+  "scripts": {},
   "lint-staged": {
     "./*.{ts,js,tsx,jsx}": [
       "prettier --loglevel warn --write",
