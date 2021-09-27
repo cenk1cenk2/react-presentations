@@ -1,3 +1,10 @@
+## @cenk1cenk2-presentations/types [1.0.1](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/types@1.0.0...@cenk1cenk2-presentations/types@1.0.1) (2021-09-27)
+
+
+### Bug Fixes
+
+* remove lint staged ([e79ee30](https://github.com/cenk1cenk2/react-presentations/commit/e79ee30bf937f8bdb3fa00138292591eaa5c22de))
+
 # @cenk1cenk2-presentations/types 1.0.0 (2021-09-27)
 
 
