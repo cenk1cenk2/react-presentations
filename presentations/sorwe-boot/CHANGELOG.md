@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/sorwe-boot [1.0.1](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/sorwe-boot@1.0.0...@cenk1cenk2-presentations/sorwe-boot@1.0.1) (2021-09-28)
+
+### Dependencies
+
+- **@cenk1cenk2-presentations/react-reveal:** upgraded to 1.0.3
+
 # @cenk1cenk2-presentations/sorwe-boot 1.0.0 (2021-09-27)
 
 ### Bug Fixes
