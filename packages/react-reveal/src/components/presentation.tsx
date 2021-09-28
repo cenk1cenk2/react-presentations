@@ -22,6 +22,7 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
   const themes = theme()
 
   consola.info('Theme initialized:', themes)
+  const { innerWidth: width, innerHeight: height } = window
 
   return (
     <Fragment>
@@ -32,8 +33,8 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
         controlsTutorial={false}
         previewLinks={true}
         hash={true}
-        width={1920}
-        height={980}
+        width={width}
+        height={height}
         margin={0}
         center={true}
         overview={true}
@@ -60,7 +61,7 @@ const GlobalStyle = createGlobalStyle(
 
         ${tw`prose prose-dark max-w-none`}
 
-        font-size: 42px;
+        font-size: 38px;
 
         ul > li {
           padding-left: 1em;
