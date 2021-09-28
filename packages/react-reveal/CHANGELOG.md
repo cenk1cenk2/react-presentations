@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/react-reveal [1.0.4](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.3...@cenk1cenk2-presentations/react-reveal@1.0.4) (2021-09-28)
+
+### Bug Fixes
+
+- rollback to old dimensions for speaker notes ([3a1a480](https://github.com/cenk1cenk2/react-presentations/commit/3a1a4807c2fd10fff2056d7a3b6d50c3b38ec155))
+
 ## @cenk1cenk2-presentations/react-reveal [1.0.3](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.2...@cenk1cenk2-presentations/react-reveal@1.0.3) (2021-09-28)
 
 ### Bug Fixes
