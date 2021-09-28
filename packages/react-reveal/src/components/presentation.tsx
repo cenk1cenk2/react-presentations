@@ -22,7 +22,6 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
   const themes = theme()
 
   consola.info('Theme initialized:', themes)
-  const { innerWidth: width, innerHeight: height } = window
 
   return (
     <Fragment>
@@ -33,8 +32,8 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
         controlsTutorial={false}
         previewLinks={true}
         hash={true}
-        width={width}
-        height={height}
+        width={1920}
+        height={980}
         margin={0}
         center={true}
         overview={true}
