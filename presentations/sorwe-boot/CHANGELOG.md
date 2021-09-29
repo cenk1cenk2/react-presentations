@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/sorwe-boot [1.0.3](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/sorwe-boot@1.0.2...@cenk1cenk2-presentations/sorwe-boot@1.0.3) (2021-09-29)
+
+### Dependencies
+
+- **@cenk1cenk2-presentations/tailwind-configuration:** upgraded to 1.0.1
+
 ## @cenk1cenk2-presentations/sorwe-boot [1.0.2](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/sorwe-boot@1.0.1...@cenk1cenk2-presentations/sorwe-boot@1.0.2) (2021-09-28)
 
 ### Dependencies
