@@ -241,6 +241,14 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
               top: 'calc(0.875em - 0.1em)'
             },
             revealClassSelector
+          ),
+          mapMultipleComponentsWithCss(
+            [ '.speaker-notes', '.speaker-notes ::before' ],
+            {
+              backgroundColor: theme('colors.gray.900'),
+              color: theme('colors.gray.50')
+            },
+            revealClassSelector
           )
         ]
 
