@@ -11,7 +11,8 @@
     "build": "craco build --config ../../craco.config.js",
     "lint": "prettier --write src/ --loglevel warn && eslint --ext .ts,.js,.tsx,.jsx --fix src/",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx src/",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "export:pdf": "docker run --rm -t -v $(pwd)/exports:/slides --user 0 --network host astefanutti/decktape reveal --load-pause 5000 http://localhost:3000/?showNotes=separate-page sorwe-boot.pdf --size 1920x960"
   },
   "author": {
     "name": "Cenk Kilic",

@@ -541,6 +541,9 @@ export default function RevealJS<Extras, Plugins extends RevealPlugin<Extras>[]>
     if (!revealDeck.current) {
       revealDeck.current = new Reveal(revealRef.current, options)
     }
+
+    (window as any).Reveal = revealDeck.current
+
     revealDeck.current.initialize(options).then(() => {
       if (revealDeck.current) {
         setContextValue({
