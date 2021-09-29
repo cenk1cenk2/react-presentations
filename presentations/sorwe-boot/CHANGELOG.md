@@ -1,3 +1,14 @@
+## @cenk1cenk2-presentations/sorwe-boot [1.0.4](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/sorwe-boot@1.0.3...@cenk1cenk2-presentations/sorwe-boot@1.0.4) (2021-09-29)
+
+### Bug Fixes
+
+- add reveal to window ([9d288b7](https://github.com/cenk1cenk2/react-presentations/commit/9d288b7427f133de02fc59bfe6af135f79b89fad))
+
+### Dependencies
+
+- **@cenk1cenk2-presentations/react-reveal-base:** upgraded to 1.0.1
+- **@cenk1cenk2-presentations/react-reveal:** upgraded to 1.0.5
+
 ## @cenk1cenk2-presentations/sorwe-boot [1.0.3](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/sorwe-boot@1.0.2...@cenk1cenk2-presentations/sorwe-boot@1.0.3) (2021-09-29)
 
 ### Dependencies
