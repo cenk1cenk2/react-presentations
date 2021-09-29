@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/react-reveal [1.0.5](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.4...@cenk1cenk2-presentations/react-reveal@1.0.5) (2021-09-29)
+
+### Dependencies
+
+- **@cenk1cenk2-presentations/react-reveal-base:** upgraded to 1.0.1
+
 ## @cenk1cenk2-presentations/react-reveal [1.0.4](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.3...@cenk1cenk2-presentations/react-reveal@1.0.4) (2021-09-28)
 
 ### Bug Fixes
