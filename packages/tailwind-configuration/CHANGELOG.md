@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/tailwind-configuration [1.0.1](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/tailwind-configuration@1.0.0...@cenk1cenk2-presentations/tailwind-configuration@1.0.1) (2021-09-29)
+
+### Bug Fixes
+
+- add print export configuration ([9430e38](https://github.com/cenk1cenk2/react-presentations/commit/9430e38430b7065c5369d2606ba46ffc33c6001b))
+
 # @cenk1cenk2-presentations/tailwind-configuration 1.0.0 (2021-09-27)
 
 ### Bug Fixes
