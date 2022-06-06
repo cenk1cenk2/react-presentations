@@ -1,3 +1,4 @@
+const { addAfterLoader, loaderByName, addPlugins } = require('@craco/craco')
 const path = require('path')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default
@@ -21,26 +22,20 @@ module.exports = {
     configure: (webpackConfig, { paths }) => {
       webpackConfig.output.path = paths.appBuild = path.resolve('dist')
 
-      webpackConfig.resolve.plugins.push(new TsconfigPathsPlugin({}))
+      addPlugins(webpackConfig, [ new TsconfigPathsPlugin({}) ])
 
       if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'develop') {
-        webpackConfig.plugins.push(
+        addPlugins(webpackConfig, [
           new WatchExternalFilesPlugin({
-            files: [ path.join(process.cwd(), '../../packages/tailwind-configuration/dist/**'), path.join(process.cwd(), '../../craco.config.js') ],
+            files: [ path.join(process.cwd(), '../../tailwind.config.js'), path.join(process.cwd(), '../../craco.config.js') ],
             verbose: true
           })
-        )
+        ])
       }
 
-      webpackConfig.module.rules.push({
-        test: /\.mdx?$/,
-        use: [
-          {
-            loader: '@mdx-js/loader',
-            /** @type {import('@mdx-js/loader').Options} */
-            options: {}
-          }
-        ]
+      addAfterLoader(webpackConfig, loaderByName('babel-loader'), {
+        test: /\.(md|mdx)$/,
+        loader: require.resolve('@mdx-js/loader')
       })
 
       return webpackConfig
