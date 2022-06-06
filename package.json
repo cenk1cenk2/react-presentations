@@ -19,7 +19,7 @@
     "command": "lerna run --stream",
     "lint": "yarn command lint --no-bail --concurrency 1",
     "lint:check": "yarn command lint:check",
-    "build": "yarn command build --include-dependencies"
+    "build": "yarn command build --include-dependencies --ignore @cenk1cenk2-presentations/sorwe-boot"
   },
   "workspaces": [
     "packages/*",
