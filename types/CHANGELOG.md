@@ -1,3 +1,15 @@
+# @cenk1cenk2-presentations/types [2.0.0](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/types@1.0.2...@cenk1cenk2-presentations/types@2.0.0) (2022-06-06)
+
+
+### Performance Improvements
+
+* update react version ([2f2072e](https://gitlab.kilic.dev/libraries/react-presentations/commit/2f2072e9ec5d3c8402dec2eb267af8bdacb5a174))
+
+
+### BREAKING CHANGES
+
+* tailwind has breaking changes for the configuration
+
 ## @cenk1cenk2-presentations/types [1.0.2](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/types@1.0.1...@cenk1cenk2-presentations/types@1.0.2) (2021-09-27)
 
 
