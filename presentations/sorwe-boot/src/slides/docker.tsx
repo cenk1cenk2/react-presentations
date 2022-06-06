@@ -1,7 +1,8 @@
-import { Note, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faDocker } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { Note, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const Docker: React.FC = () => {
   return (

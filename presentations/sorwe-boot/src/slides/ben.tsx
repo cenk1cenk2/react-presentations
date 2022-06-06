@@ -1,5 +1,6 @@
-import { H2, Note, Slide, Div, Link } from '@cenk1cenk2-presentations/react-reveal-base'
 import { Fragment } from 'react'
+
+import { H2, Note, Slide, Div, Link } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const Ben: React.FC = () => {
   return (

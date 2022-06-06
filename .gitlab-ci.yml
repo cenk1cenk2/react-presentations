@@ -1,0 +1,16 @@
+stages:
+  - install
+  - build
+  - docs
+  - publish
+
+variables:
+  RUN_MULTI: 'true'
+  NODE_VERSION: 16-alpine
+
+include:
+  - project: devops/pipes
+    file: /templates/node.gitlab-ci.yml
+
+  - project: devops/pipes
+    file: /templates/semantic-release.gitlab-ci.yml

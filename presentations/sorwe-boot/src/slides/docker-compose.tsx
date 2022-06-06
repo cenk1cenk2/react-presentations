@@ -1,7 +1,8 @@
-import { Note, Slide, Code, H2, Div, Link } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faDocker } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { Note, Slide, Code, H2, Div, Link } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const DockerCompose: React.FC = () => {
   return (
@@ -10,9 +11,7 @@ const DockerCompose: React.FC = () => {
         <H2>
           <FontAwesomeIcon icon={faDocker} />
         </H2>
-        <Code language="yml" lineNumbers={true}>
-          {{ code }}
-        </Code>
+        <Code language="yml" lineNumbers={true} code={code} />
         <Div fragment={true}>
           <Link href="https://docs.docker.com/compose/compose-file/compose-file-v3/" target="_blank">
             docker-compose dokumantasyonu

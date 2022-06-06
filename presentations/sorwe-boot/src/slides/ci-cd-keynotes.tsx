@@ -1,7 +1,8 @@
-import { H2, H3, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faJenkins } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { H2, H3, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const CiCdKeynotes: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const CiCdKeynotes: React.FC = () => {
           <FontAwesomeIcon icon={faJenkins} />
         </H2>
         <H3>nelere dikkat etmemiz gerekli?</H3>
-        <Ul className="max-w-6xl mx-auto list-none">
+        <Ul className="mx-auto max-w-6xl list-none">
           <Li fragment={true}>branching</Li>
           <Li fragment={true}>branch protection</Li>
           <Li fragment={true}>deployment</Li>

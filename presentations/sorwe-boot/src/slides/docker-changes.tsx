@@ -1,7 +1,8 @@
-import { H2, H3, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faDocker } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { H2, H3, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const DockerChanges: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const DockerChanges: React.FC = () => {
           <FontAwesomeIcon icon={faDocker} />
         </H2>
         <H3>neden?</H3>
-        <Ul className="max-w-6xl mx-auto list-none">
+        <Ul className="mx-auto max-w-6xl list-none">
           <Li fragment={true}>yazilan kod versiyonlanarak paketlenecek</Li>
           <Li fragment={true}>yerel ortamda her zaman calisan clonelar</Li>
           <Li fragment={true}>version farklarindan olusan problemlerin onune gecilmesi</Li>

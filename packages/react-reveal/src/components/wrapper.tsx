@@ -1,8 +1,9 @@
-import { enablePrismLineNumbers, useReveal } from '@cenk1cenk2-presentations/react-reveal-base'
-import overlay from '@cenk1cenk2-presentations/react-reveal/assets/images/overlay.png'
 import consola from 'consola'
 import { Fragment, useEffect, useState } from 'react'
 import { createGlobalStyle, css } from 'styled-components'
+
+import { enablePrismLineNumbers, useReveal } from '@cenk1cenk2-presentations/react-reveal-base'
+import overlay from '@cenk1cenk2-presentations/react-reveal/assets/images/overlay.png'
 
 export interface WrapperProps {
   overlay?: boolean | 'firstAndLast'

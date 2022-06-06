@@ -1,4 +1,4 @@
-import { RevealPlugin } from '../../'
+import { RevealPlugin } from '../..'
 
 declare const MathPlugin: RevealPlugin
 

@@ -1,6 +1,7 @@
 {
   "extends": "../../.eslintrc.js",
   "rules": {
-    "max-len": 0
+    "max-len": 0,
+    "import/no-extraneous-dependencies": "off"
   }
 }

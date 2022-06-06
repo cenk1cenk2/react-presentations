@@ -20,6 +20,7 @@ type VideoTypes = '3gp' | 'mpg' | 'mpeg' | 'mp4' | 'm4a' | 'm4p' | 'ogv' | 'ogg'
 const formatMap: {
   [P in VideoTypes]: string
 } = {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   '3gp': 'video/3gpp',
   mpg: 'audio/mpeg',
   mpeg: 'audio/mpeg',

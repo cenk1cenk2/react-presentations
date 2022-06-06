@@ -18,6 +18,7 @@ function getLinkFromSlide (reveal: Reveal<MightBeRevealPlugin[]> | null, slide: 
     return '#'
   }
   const indices = reveal.getIndices(slide)
+
   return (e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
@@ -29,12 +30,15 @@ function getLink (reveal: Reveal<MightBeRevealPlugin[]> | null, href?: string, s
   if (href) {
     return href
   }
+
   if (!slide) {
     return '#'
   }
+
   if (typeof slide === 'string') {
     // slide is an id
     const slideById = document.querySelector<HTMLElement>(`#${slide}`)
+
     if (slideById) {
       return getLinkFromSlide(reveal, slideById)
     }
@@ -45,6 +49,7 @@ function getLink (reveal: Reveal<MightBeRevealPlugin[]> | null, href?: string, s
   } else if (slide) {
     return getLinkFromSlide(reveal, slide)
   }
+
   return '#'
 }
 
@@ -53,6 +58,7 @@ const Link: React.FC<MakeProps<LinkProps, 'a'>> = ({ autoAnimateId, children, fr
   const onClickOrHref = getLink(reveal, href, slide)
   const onClick = typeof onClickOrHref === 'function' ? onClickOrHref : undefined
   const link = typeof onClickOrHref === 'string' ? onClickOrHref : undefined
+
   return (
     <a {...getClassNameProps(props)} data-id={autoAnimateId} href={link} onClick={onClick} data-fragment-index={fragmentIndex}>
       {children}

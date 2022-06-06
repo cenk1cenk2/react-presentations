@@ -1,26 +1,8 @@
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [ '@cenk1cenk2/eslint-config', '@cenk1cenk2/eslint-config/typescript', '@cenk1cenk2/eslint-config/react-typescript' ],
+  overrides: [ ...require('@cenk1cenk2/eslint-config/utils').generateImportGroupsWithOverride({ tsconfigDir: __dirname, tsconfig: 'tsconfig.json' }) ],
   rules: {
-    'import/order': [
-      'error',
-      {
-        pathGroups: [
-          {
-            pattern: '@root/**',
-            group: 'parent'
-          }
-        ],
-        pathGroupsExcludedImportTypes: [ 'builtin' ],
-        groups: [
-          [ 'builtin', 'external' ],
-          [ 'index', 'parent', 'sibling' ]
-        ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true
-        }
-      }
-    ]
+    'import/no-extraneous-dependencies': 'off'
   }
 }

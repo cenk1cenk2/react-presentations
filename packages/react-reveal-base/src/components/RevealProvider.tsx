@@ -21,5 +21,6 @@ export interface RevealProviderProps<Plugins extends MightBeRevealPlugin[]> {
 export default function RevealProvider<Plugins extends MightBeRevealPlugin[]> ({ reveal, children }: RevealProviderProps<Plugins>) {
   // coerce the type to the actual reveal/plugin combo it is passed
   const Context = RevealContext as React.Context<RevealContextType<Plugins>>
+
   return <Context.Provider value={reveal}>{children}</Context.Provider>
 }

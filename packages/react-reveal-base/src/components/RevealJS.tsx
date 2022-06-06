@@ -534,10 +534,12 @@ export default function RevealJS<Extras, Plugins extends RevealPlugin<Extras>[]>
       pluginProps
     ]
   )
+
   useEffect(() => {
     if (!revealRef?.current) {
       return
     }
+
     if (!revealDeck.current) {
       revealDeck.current = new Reveal(revealRef.current, options)
     }

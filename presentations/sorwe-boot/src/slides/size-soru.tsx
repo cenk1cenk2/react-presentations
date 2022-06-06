@@ -1,7 +1,8 @@
-import { H2, H3, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { H2, H3, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const SizeBirSoru: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const SizeBirSoru: React.FC = () => {
           <FontAwesomeIcon icon={faQuestionCircle} />
         </H2>
         <H3>burada size ufak bir sorum var.</H3>
-        <Ul className="max-w-6xl mx-auto list-none">
+        <Ul className="mx-auto max-w-6xl list-none">
           <Li fragment={true}>environment ayarlari icin ne gibi bir library kullaniyorsunuz?</Li>
         </Ul>
         <Note data-markdown>{notes}</Note>

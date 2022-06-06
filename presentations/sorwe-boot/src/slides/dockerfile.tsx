@@ -1,7 +1,8 @@
-import { Note, Slide, Code, H2, Div, Link } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faDocker } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { Note, Slide, Code, H2, Div, Link } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const Dockerfile: React.FC = () => {
   return (
@@ -11,9 +12,7 @@ const Dockerfile: React.FC = () => {
           <FontAwesomeIcon icon={faDocker} />
         </H2>
         <Div className="">
-          <Code language="docker" lineNumbers={true}>
-            {{ code }}
-          </Code>
+          <Code language="docker" lineNumbers={true} code={code} />
         </Div>
         <Div fragment={true}>
           <Link href="https://docs.docker.com/engine/reference/builder/" target="_blank">

@@ -1,26 +1,19 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+import { DeepPartial } from '@webundsoehne/ts-utility-types'
 import defu from 'defu'
-import { DeepPartial } from 'helper-types'
 import { CSSProperties } from 'styled-components'
 import defaultTheme from 'tailwindcss/defaultTheme'
-import plugin from 'tailwindcss/plugin'
 import { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { getColors } from 'theme-colors'
 
 export function generateTailwindConfiguration (config?: DeepPartial<TailwindConfig>): DeepPartial<TailwindConfig> {
-  return defu<any, any>(config, {
-    jit: true,
+  return defu<any, DeepPartial<TailwindConfig> & { theme: { extend: { typography: any } } }>(config, {
     darkMode: 'class',
-    future: {
-      removeDeprecatedGapUtilities: true,
-      purgeLayersByDefault: true,
-      defaultLineHeights: true,
-      standardFontWeights: true
-    },
     theme: {
       extend: {
         fontFamily: {
-          sans: [ 'DM Sans', ...defaultTheme.fontFamily.sans ],
-          mono: [ 'Consolas', ...defaultTheme.fontFamily.mono ]
+          sans: [ 'DM Sans', ...(defaultTheme.fontFamily as any).sans ],
+          mono: [ 'Consolas', ...(defaultTheme.fontFamily as any).mono ]
         },
         colors: {
           primary: getColors('#cd0043'),
@@ -30,7 +23,7 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
         inset: {
           16: '4rem'
         },
-        typography: (theme: (s: string) => any): Record<string, Record<string, Record<string, CSSProperties>>> => ({
+        typography: (theme: (s: string) => any): Record<PropertyKey, Record<PropertyKey, Record<PropertyKey, CSSProperties>>> => ({
           DEFAULT: {
             css: {
               a: {
@@ -215,54 +208,14 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
         zIndex: false,
         opacity: false
       }),
-      require('@tailwindcss/forms'),
-      plugin(({ addBase, theme }) => {
-        const revealClassSelector = '.reveal'
-
-        const cssMaps = [
-          mapMultipleComponentsWithCss([ '::selection', '::-moz-selection' ], {
-            background: theme('colors.gray.500')
-          }),
-          mapMultipleComponentsWithCss([ 'img', 'video', 'iframe' ], { maxWidth: '95%', maxHeight: '95%' }, revealClassSelector),
-          mapMultipleComponentsWithCss([ 'em' ], { fontStyle: 'italic' }, revealClassSelector),
-          mapMultipleComponentsWithCss([ '.controls' ], { color: theme('colors.primary.600') }, revealClassSelector),
-          mapMultipleComponentsWithCss([ '.progress' ], { background: theme('colors.gray.700'), color: theme('colors.primary.500') }, revealClassSelector),
-          mapMultipleComponentsWithCss(
-            [ 'ul > li', 'ol > li' ],
-            {
-              paddingLeft: '1em',
-              textAlign: 'left'
-            },
-            revealClassSelector
-          ),
-          mapMultipleComponentsWithCss(
-            [ 'ul > li::before', 'ol > li::before' ],
-            {
-              top: 'calc(0.875em - 0.1em)'
-            },
-            revealClassSelector
-          ),
-          mapMultipleComponentsWithCss(
-            [ '.speaker-notes', '.speaker-notes ::before' ],
-            {
-              backgroundColor: theme('colors.gray.900'),
-              color: theme('colors.gray.50')
-            },
-            revealClassSelector
-          )
-        ]
-
-        addBase(cssMaps.reduce((o, c) => ({ ...o, ...c }), {}))
-      })
+      require('@tailwindcss/forms')
     ],
     purge: {
+      content: [ './src/**/*.{js,ts,jsx,tsx}', '**/node_modules/cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ],
       enabled: process.env.NODE_ENV === 'production',
       layers: [ 'components', 'utilities' ],
-      content: [ './src/**/*.{js,ts,jsx,tsx}', '**/node_modules/cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ]
+      mode: null
     }
+    // content: { files: [ './src/**/*.{js,ts,jsx,tsx}', '**/node_modules/cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ] }
   })
-}
-
-function mapMultipleComponentsWithCss (components: string[], css: CSSProperties, prefix?: string): Record<PropertyKey, CSSProperties> {
-  return components.reduce((o, c) => ({ ...o, [prefix ? `${prefix} ${c}` : c]: css }), {})
 }

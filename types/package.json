@@ -5,7 +5,7 @@
   "description": "Presentation template using react and reveal.js.",
   "main": "index.d.ts",
   "types": "index.d.ts",
-  "repository": "https://github.com/cenk1cenk2/react-presentations",
+  "repository": "https://gitlab.kilic.dev/libraries/react-presentations",
   "author": {
     "name": "Cenk Kilic",
     "email": "cenk@kilic.dev",
@@ -25,5 +25,9 @@
     ]
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": ">= 18",
+    "styled-components": ">= 5.3"
+  }
 }

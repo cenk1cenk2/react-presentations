@@ -2,9 +2,10 @@ const path = require('path')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default
 
+/** @type {import("@craco/craco").CracoConfig} */
 module.exports = {
   style: {
-    postcss: {
+    postOptions: {
       plugins: [ require('tailwindcss'), require('autoprefixer') ]
     }
   },
@@ -30,6 +31,17 @@ module.exports = {
           })
         )
       }
+
+      webpackConfig.module.rules.push({
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: '@mdx-js/loader',
+            /** @type {import('@mdx-js/loader').Options} */
+            options: {}
+          }
+        ]
+      })
 
       return webpackConfig
     }

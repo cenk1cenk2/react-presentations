@@ -4,13 +4,13 @@ import { MakeProps, getClassNameProps } from './BaseComponent'
 import { RevealContext } from './RevealProvider'
 
 export interface CodeProps {
-  children: { code: string }
   language?: string
   escape?: boolean
   lineNumbers?: string | true
   startLineNumbersAt?: number
   noTrim?: boolean
   autoAnimateId?: string
+  code: string
 }
 
 function getPrismClassName (prism: boolean | undefined, autoAnimateId: string | undefined, lineNumbers: string | true | undefined, language: string | undefined) {
@@ -18,17 +18,19 @@ function getPrismClassName (prism: boolean | undefined, autoAnimateId: string | 
     return undefined
   }
   const lineNumberClassName = autoAnimateId || lineNumbers
+
   return `${`language-${language || 'none'}`}${lineNumberClassName ? ' line-numbers' : ''}` || undefined
 }
 
-const Code: React.FC<MakeProps<CodeProps, 'pre'>> = ({ id, children, language, escape, fragmentIndex, lineNumbers, startLineNumbersAt, noTrim, autoAnimateId, ...props }) => {
+const Code: React.FC<MakeProps<CodeProps, 'pre'>> = ({ id, language, escape, fragmentIndex, lineNumbers, startLineNumbersAt, noTrim, autoAnimateId, ...props }) => {
   const { prism } = useContext(RevealContext)
   const prismClassName = getPrismClassName(prism, autoAnimateId, lineNumbers, language)
   const fancyProps = getClassNameProps(props)
   const calculatedClassName: string | undefined = (fancyProps as any).className
   const className = calculatedClassName && prismClassName ? `${calculatedClassName} ${prismClassName}` : prismClassName
+
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="mx-auto max-w-4xl">
       <pre
         {...fancyProps}
         className={className}
@@ -44,7 +46,7 @@ const Code: React.FC<MakeProps<CodeProps, 'pre'>> = ({ id, children, language, e
           data-trim={!noTrim}
           data-line-numbers={autoAnimateId ? lineNumbers || true : lineNumbers}
         >
-          {children.code}
+          {props.code}
         </code>
       </pre>
     </div>

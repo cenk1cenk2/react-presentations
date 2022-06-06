@@ -24,5 +24,12 @@
     "./*.{json,md}": [
       "prettier --loglevel warn --write"
     ]
+  },
+  "peerDependencies": {
+    "react": ">= 18",
+    "react-dom": ">= 18",
+    "reveal.js": ">= 4",
+    "prismjs": ">= 1",
+    "prism-themes": ">= 1"
   }
 }

@@ -49,8 +49,10 @@ interface PrismPlugin extends RevealPluginDefinition<PrismOptions> {
  */
 function scrollToTopmostHighlightedLine (currentSlide: Element) {
   const codeSections = currentSlide.querySelectorAll('pre[class*="language-"], pre[class*="lang-"]')
+
   for (const code of codeSections) {
     const highlight = code.querySelector<HTMLElement>('.line-highlight')
+
     if (!highlight || !highlight.parentElement) {
       return
     }
@@ -79,6 +81,7 @@ const PrismHighlightPlugin: PrismPlugin = {
   init (reveal) {
     reveal.on('ready', () => {
       const currentSlide = reveal.getCurrentSlide()
+
       PrismHighlightPlugin.highlightedSlides.set(currentSlide, true)
       Prism.highlightAllUnder(currentSlide)
       // scroll to top-most highlighted line
@@ -95,6 +98,7 @@ const PrismHighlightPlugin: PrismPlugin = {
     })
     reveal.on('slidetransitionend', () => {
       const currentSlide = reveal.getCurrentSlide()
+
       // scroll to top-most highlighted line
       scrollToTopmostHighlightedLine(currentSlide)
     })

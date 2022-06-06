@@ -1,7 +1,8 @@
-import { H2, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 import { faDocker, faJenkins } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Fragment } from 'react'
+
+import { H2, Li, Note, Slide, Ul } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const Siz: React.FC = () => {
   return (

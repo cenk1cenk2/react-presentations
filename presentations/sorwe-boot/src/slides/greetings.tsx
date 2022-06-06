@@ -1,6 +1,7 @@
 import sorweLogo from '@assets/sorwe-logo.png'
-import { H1, Image, Note, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 import { Fragment } from 'react'
+
+import { H1, Image, Note, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const Greetings: React.FC = () => {
   return (

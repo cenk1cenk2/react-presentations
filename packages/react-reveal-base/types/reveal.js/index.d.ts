@@ -151,9 +151,7 @@ export type MightBeRevealPlugin = () => unknown
 
 export type RevealPlugin<PluginExtraConfig = undefined> = () => RevealPluginDefinition<PluginExtraConfig>
 
-export interface RevealPluginList {
-  [pluginName: string]: RevealPlugin
-}
+export type RevealPluginList = Record<string, RevealPlugin>
 
 export interface RevealConfigBase<Plugins extends MightBeRevealPlugin[]> {
   plugins?: RevealPlugins<Plugins>

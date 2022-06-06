@@ -24,10 +24,12 @@ export interface FragmentProps {
 
 const Fragment: React.FC<FragmentProps> = ({ index, transition, children, tag = 'span' }) => {
   const classes = [ 'fragment' ]
+
   if (transition) {
     classes.push(transition)
   }
   const Tag = tag
+
   return (
     <Tag className={classes.join(' ')} data-fragment-index={index}>
       {children}

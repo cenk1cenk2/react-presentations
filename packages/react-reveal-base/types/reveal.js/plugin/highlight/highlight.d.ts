@@ -1,4 +1,4 @@
-import { RevealPlugin } from '../../'
+import { RevealPlugin } from '../..'
 
 export interface HighlightOptions {
   highlight?: {

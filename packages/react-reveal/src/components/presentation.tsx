@@ -1,19 +1,20 @@
 import 'reveal.js/dist/reveal.css'
-import 'prism-themes/themes/prism-vsc-dark-plus.css'
+import 'prism-themes/themes/prism-one-dark.css'
 import 'prismjs/plugins/line-highlight/prism-line-highlight'
 import 'prismjs/plugins/line-highlight/prism-line-highlight.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import '@cenk1cenk2-presentations/react-reveal/assets/styles/tailwind.css'
-import { MarkdownPlugin, NotesPlugin, PrismHighlightPlugin, RevealJS, RevealJSProps, SearchPlugin, ZoomPlugin } from '@cenk1cenk2-presentations/react-reveal-base'
 import consola from 'consola'
 import React, { Fragment } from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 import tw, { theme } from 'twin.macro'
 
 import { Wrapper, WrapperProps } from './wrapper'
+import { MarkdownPlugin, NotesPlugin, PrismHighlightPlugin, RevealJS, RevealJSProps, RevealPlugin, SearchPlugin, ZoomPlugin } from '@cenk1cenk2-presentations/react-reveal-base'
 
 export interface PresentationsProps extends WrapperProps {
   reveal?: RevealJSProps<any[]>
+  children?: React.ReactNode
 }
 
 export const Presentation: React.FC<PresentationsProps> = (props) => {
@@ -41,6 +42,7 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
         navigationMode="linear"
         loop={true}
         autoPlayMedia={true}
+        pluginProps={{ prism: { theme: 'atom-one-dark' } }}
         {...props.reveal}
       >
         {props.children}
@@ -60,7 +62,7 @@ const GlobalStyle = createGlobalStyle(
 
         ${tw`prose prose-dark max-w-none`}
 
-        font-size: 38px;
+        font-size: 36px;
 
         ul > li {
           padding-left: 1em;
@@ -79,21 +81,49 @@ const GlobalStyle = createGlobalStyle(
         }
 
         pre {
-          ${tw`leading-3 border-4 border-gray-700 shadow-lg`}
+          ${tw`text-xl! border-4 border-gray-700 bg-gray-800 shadow-lg px-4`}
 
           code {
-            ${tw`pl-5`}
-
+            ${tw`overflow-x-scroll`}
             .line-numbers-rows {
-              left: -3.8em !important;
-              line-height: 0.95rem;
-              ${tw`h-full border-r-2 border-gray-700 top-0! text-gray-600`}
             }
           }
         }
 
         pre[class*='language-'].line-numbers {
-          padding-left: 2.25em !important;
+          ${tw`pl-24!`}
+        }
+
+        ::selection,
+        ::moz-selection {
+          ${tw`text-gray-500!`}
+        }
+
+        .reveal {
+          .progress {
+            ${tw`bg-gray-600 text-primary-600`}
+          }
+
+          .controls {
+            ${tw`text-primary-700`}
+          }
+
+          img,
+          video,
+          iframe {
+            max-width: 95%;
+            max-height: 95%;
+          }
+
+          em {
+            ${tw`italic`}
+          }
+
+          .speaker-notes,
+          .speaker-notes ::before,
+          #speaker-controls {
+            ${tw`text-gray-50 bg-gray-900`}
+          }
         }
       }
     }

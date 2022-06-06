@@ -1,16 +1,17 @@
 import sorweLogo from '@assets/sorwe-logo.png'
-import { H2, Image, Note, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 import { Fragment } from 'react'
+
+import { H2, Image, Note, Slide } from '@cenk1cenk2-presentations/react-reveal-base'
 
 const Last: React.FC = () => {
   return (
     <Fragment>
       <Slide>
         <div className="grid grid-cols-3">
-          <div className="max-w-lg bg-gray-900 border-4 border-primary-700 shadow-2xl rounded-3xl rounded-l-none border-l-0 grid-span-1">
+          <div className="max-w-lg bg-gray-900 rounded-3xl rounded-l-none border-4 border-l-0 shadow-2xl border-primary-700 grid-span-1">
             <Image src={sorweLogo} />
           </div>
-          <H2 className="mx-auto self-center grid-span-2">Beni dinlediğiniz için teşekkür ederim.</H2>
+          <H2 className="self-center mx-auto grid-span-2">Beni dinlediğiniz için teşekkür ederim.</H2>
         </div>
         <Note data-markdown>{notes}</Note>
       </Slide>

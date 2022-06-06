@@ -43,10 +43,23 @@ export type Props<T extends keyof ReactHTML> = MakeProps<RevealProps, T>
 export function getClassNameProps (baseProps: BaseProps) {
   const { className, fragment, fragmentStyle, fitText, ...props } = baseProps
   const classes = className ? [ className ] : []
-  if (fragment) classes.push('fragment')
-  if (fitText) classes.push('r-fit-text')
-  if (fragmentStyle) classes.push(fragmentStyle)
-  if (!classes.length) return props
+
+  if (fragment) {
+    classes.push('fragment')
+  }
+
+  if (fitText) {
+    classes.push('r-fit-text')
+  }
+
+  if (fragmentStyle) {
+    classes.push(fragmentStyle)
+  }
+
+  if (!classes.length) {
+    return props
+  }
+
   return {
     ...props,
     className: classes.join(' ')
@@ -55,14 +68,18 @@ export function getClassNameProps (baseProps: BaseProps) {
 
 export function generateBaseComponent<T extends SimpleComponent> (component: T) {
   const Component = (props: MakeFullProps<T>) => BaseComponent<T>({ ...props, component })
+
   Component.displayName = `${component[0].toUpperCase()}${component.slice(1)}`
+
   return Component
 }
 
 export default function BaseComponent<T extends keyof ReactHTML> ({ component, autoAnimateId, fragmentIndex, children, ...props }: Props<T>) {
   return createElement(component, {
     ...getClassNameProps(props),
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     'data-id': autoAnimateId,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     'data-fragment-index': fragmentIndex,
     children
   })

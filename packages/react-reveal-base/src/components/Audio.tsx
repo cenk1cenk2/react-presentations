@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import React from 'react'
 
 import { getClassNameProps, MakeProps } from './BaseComponent'

@@ -15,7 +15,6 @@ const MarkdownSlide: React.FC<MakeProps<MarkdownSlideProps, 'section'>> = ({ fil
   verticalSeparator = '^\n\n',
   notesSeparator = '^Note:',
   charset = 'iso-8859-15',
-  fragmentIndex,
   ...props }) => {
   return (
     <section

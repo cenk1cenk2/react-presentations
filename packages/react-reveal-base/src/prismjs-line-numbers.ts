@@ -31,6 +31,7 @@ export default function startup (Prism: any) {
       }
 
       const lineNumberRows = element.querySelector('.line-numbers-rows')
+
       if (!lineNumberRows) {
         return
       }
@@ -40,6 +41,7 @@ export default function startup (Prism: any) {
       if (number < lineNumberStart) {
         number = lineNumberStart
       }
+
       if (number > lineNumberEnd) {
         number = lineNumberEnd
       }
@@ -82,6 +84,7 @@ export default function startup (Prism: any) {
     elements = elements.filter((e) => {
       const codeStyles = getStyles(e)
       const whiteSpace = codeStyles?.whiteSpace
+
       return whiteSpace === 'pre-wrap' || whiteSpace === 'pre-line'
     })
 
@@ -101,6 +104,7 @@ export default function startup (Prism: any) {
       .map((element) => {
         const codeElement = element.querySelector('code')
         const lineNumbersWrapper = element.querySelector('.line-numbers-rows')
+
         if (!codeElement || !lineNumbersWrapper) {
           return undefined
         }
@@ -120,6 +124,7 @@ export default function startup (Prism: any) {
         lineNumberSizer.style.display = 'block'
 
         const oneLinerHeight = lineNumberSizer.getBoundingClientRect().height
+
         lineNumberSizer.innerHTML = ''
 
         return {
@@ -145,6 +150,7 @@ export default function startup (Prism: any) {
       lines.forEach((line, index) => {
         if (line && line.length > 1) {
           const e = lineNumberSizer.appendChild(document.createElement('span'))
+
           e.style.display = 'block'
           e.textContent = line
         } else {
@@ -158,6 +164,7 @@ export default function startup (Prism: any) {
       const { lineHeights } = info
 
       let childIndex = 0
+
       for (let i = 0; i < lineHeights.length; i++) {
         if (lineHeights[i] === undefined) {
           lineHeights[i] = lineNumberSizer.children[childIndex++].getBoundingClientRect().height
@@ -194,6 +201,7 @@ export default function startup (Prism: any) {
   }
 
   let lastWidth: number
+
   window.addEventListener('resize', () => {
     if (config.assumeViewportIndependence && lastWidth === window.innerWidth) {
       return
@@ -237,6 +245,7 @@ export default function startup (Prism: any) {
     const lines = new Array(linesNum + 1).join('<span></span>')
 
     const lineNumbersWrapper = document.createElement('span')
+
     lineNumbersWrapper.setAttribute('aria-hidden', 'true')
     lineNumbersWrapper.className = 'line-numbers-rows'
     lineNumbersWrapper.innerHTML = lines

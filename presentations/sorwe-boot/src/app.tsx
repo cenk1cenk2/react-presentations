@@ -1,4 +1,3 @@
-import { Presentation } from '@cenk1cenk2-presentations/react-reveal'
 import React, { Fragment } from 'react'
 
 import BenKimim from './slides/ben'
@@ -17,6 +16,7 @@ import Last from './slides/last'
 import Siz from './slides/siz'
 import SizeBirSoru from './slides/size-soru'
 import WhatsNext from './slides/what-is-next'
+import { Presentation } from '@cenk1cenk2-presentations/react-reveal'
 
 const App: React.FC = () => {
   return (
