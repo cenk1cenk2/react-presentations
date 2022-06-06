@@ -1,3 +1,17 @@
+# @cenk1cenk2-presentations/react-reveal [2.0.0](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.5...@cenk1cenk2-presentations/react-reveal@2.0.0) (2022-06-06)
+
+### Performance Improvements
+
+- update react version ([2f2072e](https://gitlab.kilic.dev/libraries/react-presentations/commit/2f2072e9ec5d3c8402dec2eb267af8bdacb5a174))
+
+### BREAKING CHANGES
+
+- tailwind has breaking changes for the configuration
+
+### Dependencies
+
+- **@cenk1cenk2-presentations/react-reveal-base:** upgraded to 2.0.0
+
 ## @cenk1cenk2-presentations/react-reveal [1.0.5](https://github.com/cenk1cenk2/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.4...@cenk1cenk2-presentations/react-reveal@1.0.5) (2021-09-29)
 
 ### Dependencies
