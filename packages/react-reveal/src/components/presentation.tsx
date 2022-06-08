@@ -26,7 +26,7 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
 
   return (
     <Fragment>
-      <GlobalStyle />
+      <DefaultGlobalStyle />
       <RevealJS
         plugins={plugins}
         controls={true}
@@ -52,78 +52,61 @@ export const Presentation: React.FC<PresentationsProps> = (props) => {
   )
 }
 
-const GlobalStyle = createGlobalStyle(
+export const DefaultGlobalStyle = createGlobalStyle(
   () => css`
-    body {
-      #root {
-        ${tw`w-full h-full`}
+    #root {
+      ${tw`w-full h-full`}
 
-        ${tw`bg-gray-900`};
+      ${tw`bg-gray-900`}
 
-        ${tw`prose prose-dark max-w-none`}
+      ${tw`prose prose-dark max-w-none`}
 
-        font-size: 36px;
+      font-size: 40px;
 
-        ul > li {
-          padding-left: 1em;
+      pre {
+        ${tw`text-xl! border-4 rounded-3xl border-gray-700 bg-gray-800 shadow-lg px-4`}
 
-          ::before {
-            top: calc(0.875em - 0.1em);
+        code {
+          ${tw`overflow-x-scroll`}
+
+          .line-numbers-rows {
           }
         }
+      }
 
-        ol > li {
-          padding-left: 1em;
+      pre[class*='language-'].line-numbers {
+        ${tw`pl-24!`}
+      }
 
-          ::before {
-            top: calc(0.875em - 0.1em);
-          }
+      ::selection,
+      ::moz-selection {
+        ${tw`text-gray-500!`}
+      }
+
+      .reveal {
+        .progress {
+          ${tw`bg-gray-600 text-primary-600`}
         }
 
-        pre {
-          ${tw`text-xl! border-4 border-gray-700 bg-gray-800 shadow-lg px-4`}
-
-          code {
-            ${tw`overflow-x-scroll`}
-            .line-numbers-rows {
-            }
-          }
+        .controls {
+          ${tw`text-primary-700`}
         }
 
-        pre[class*='language-'].line-numbers {
-          ${tw`pl-24!`}
+        img,
+        video,
+        iframe {
+          max-width: 95%;
+          max-height: 95%;
         }
 
-        ::selection,
-        ::moz-selection {
-          ${tw`text-gray-500!`}
+        em {
+          ${tw`italic`}
         }
 
-        .reveal {
-          .progress {
-            ${tw`bg-gray-600 text-primary-600`}
-          }
-
-          .controls {
-            ${tw`text-primary-700`}
-          }
-
-          img,
-          video,
-          iframe {
-            max-width: 95%;
-            max-height: 95%;
-          }
-
-          em {
-            ${tw`italic`}
-          }
-
-          .speaker-notes,
-          .speaker-notes ::before,
-          #speaker-controls {
-            ${tw`text-gray-50 bg-gray-900`}
-          }
+        .speaker-notes,
+        .speaker-notes ::before,
+        #speaker-controls {
+          ${tw`text-gray-50 bg-gray-900`}
         }
       }
     }

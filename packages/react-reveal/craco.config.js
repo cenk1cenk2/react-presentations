@@ -7,7 +7,7 @@ const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default
 module.exports = {
   style: {
     postOptions: {
-      plugins: [ require('tailwindcss'), require('autoprefixer') ]
+      plugins: [ require('tailwindcss')(path.join(process.cwd(), './tailwind.config.js')), require('autoprefixer') ]
     }
   },
   eslint: {
@@ -27,7 +27,7 @@ module.exports = {
       if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'develop') {
         addPlugins(webpackConfig, [
           new WatchExternalFilesPlugin({
-            files: [ path.join(process.cwd(), '../../tailwind.config.js'), path.join(process.cwd(), '../../craco.config.js') ],
+            files: [ path.join(process.cwd(), '../../tailwind.config.js'), path.join(process.cwd(), '../../craco.config.js'), path.join(process.cwd(), './tailwind.config.js') ],
             verbose: true
           })
         ])

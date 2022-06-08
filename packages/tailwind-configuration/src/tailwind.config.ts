@@ -31,6 +31,7 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
                 textDecoration: 'none'
               },
               h1: {
+                fontWeight: 700,
                 paddingTop: theme('padding.1'),
                 paddingBottom: theme('padding.1'),
                 marginBottom: 0,
@@ -73,7 +74,7 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
                 lineHeight: theme('lineHeight.3')
               },
               pre: {
-                borderRadius: 0
+                borderRadius: 4
               },
               'code::before': {
                 content: ''
