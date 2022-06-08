@@ -210,12 +210,6 @@ export function generateTailwindConfiguration (config?: DeepPartial<TailwindConf
       }),
       require('@tailwindcss/forms')
     ],
-    purge: {
-      content: [ './src/**/*.{js,ts,jsx,tsx}', '**/node_modules/cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ],
-      enabled: process.env.NODE_ENV === 'production',
-      layers: [ 'components', 'utilities' ],
-      mode: null
-    }
-    // content: { files: [ './src/**/*.{js,ts,jsx,tsx}', '**/node_modules/cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ] }
+    content: [ '**/src/**/*.{js,ts,jsx,tsx,md,mdx}', '**/node_modules/@cenk1cenk2-presentations/**/*.{js,ts,jsx,tsx}' ]
   })
 }
