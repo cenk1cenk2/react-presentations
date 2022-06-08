@@ -1,3 +1,9 @@
+# @cenk1cenk2-presentations/tailwind-configuration [2.1.0](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/tailwind-configuration@2.0.1...@cenk1cenk2-presentations/tailwind-configuration@2.1.0) (2022-06-08)
+
+### Features
+
+- update configuration ([90db2d3](https://gitlab.kilic.dev/libraries/react-presentations/commit/90db2d3ccb7262a078e8ea1b33a9accae9349cd1))
+
 ## @cenk1cenk2-presentations/tailwind-configuration [2.0.1](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/tailwind-configuration@2.0.0...@cenk1cenk2-presentations/tailwind-configuration@2.0.1) (2022-06-08)
 
 ### Bug Fixes
