@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/tailwind-configuration [2.0.1](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/tailwind-configuration@2.0.0...@cenk1cenk2-presentations/tailwind-configuration@2.0.1) (2022-06-08)
+
+### Bug Fixes
+
+- update craco configuration ([b3804b0](https://gitlab.kilic.dev/libraries/react-presentations/commit/b3804b03440fa9a4935a0f8906c2b890c1a16537))
+
 # @cenk1cenk2-presentations/tailwind-configuration [2.0.0](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/tailwind-configuration@1.0.1...@cenk1cenk2-presentations/tailwind-configuration@2.0.0) (2022-06-06)
 
 ### Performance Improvements
