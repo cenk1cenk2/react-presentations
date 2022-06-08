@@ -1,3 +1,10 @@
+## @cenk1cenk2-presentations/react-reveal [2.0.1](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@2.0.0...@cenk1cenk2-presentations/react-reveal@2.0.1) (2022-06-08)
+
+
+### Bug Fixes
+
+* add txt as type ([e1aa3b7](https://gitlab.kilic.dev/libraries/react-presentations/commit/e1aa3b786e7b97723ab40c5eab4a3ad8c172cdb4))
+
 # @cenk1cenk2-presentations/react-reveal [2.0.0](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@1.0.5...@cenk1cenk2-presentations/react-reveal@2.0.0) (2022-06-06)
 
 ### Performance Improvements
