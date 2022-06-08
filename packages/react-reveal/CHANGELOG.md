@@ -1,3 +1,9 @@
+## @cenk1cenk2-presentations/react-reveal [2.1.1](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@2.1.0...@cenk1cenk2-presentations/react-reveal@2.1.1) (2022-06-08)
+
+### Bug Fixes
+
+- update deps ([e1bf75b](https://gitlab.kilic.dev/libraries/react-presentations/commit/e1bf75bb6942fc4ff58d5f63d42b7d0cd5b5ec72))
+
 # @cenk1cenk2-presentations/react-reveal [2.1.0](https://gitlab.kilic.dev/libraries/react-presentations/compare/@cenk1cenk2-presentations/react-reveal@2.0.2...@cenk1cenk2-presentations/react-reveal@2.1.0) (2022-06-08)
 
 ### Features
