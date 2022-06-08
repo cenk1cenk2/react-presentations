@@ -68,9 +68,6 @@ export const DefaultGlobalStyle = createGlobalStyle(
 
         code {
           ${tw`overflow-x-scroll`}
-
-          .line-numbers-rows {
-          }
         }
       }
 
